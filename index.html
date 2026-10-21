@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrina Digital | Inicio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Encabezado compartido por las tres vistas -->
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a href="index.html" class="marca">Vitrina<span>Digital</span></a>
+      <nav class="menu">
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="buscar.html">Buscar</a>
+        <a href="crud.html">Mi inventario</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="contenedor diseno">
+
+    <main>
+      <!-- Presentación del sitio -->
+      <section class="portada">
+        <h1>Catálogo de productos en línea</h1>
+        <p>Todos los productos de esta página llegan desde una API pública.
+            JavaScript los pide al servidor y crea cada tarjeta en el momento.</p>
+      </section>
+
+      <!-- Sección 1: los 4 productos con mejor valoración -->
+      <section>
+        <h2>Mejor valorados</h2>
+        <div id="contenedor-destacados" class="cuadricula"></div>
+      </section>
+
+      <!-- Sección 2: catálogo con paginación -->
+      <section>
+        <h2>Catálogo completo</h2>
+        <p id="mensaje-estado" class="mensaje oculto"></p>
+        <div id="contenedor-productos" class="cuadricula"></div>
+        <button type="button" id="btn-cargar-mas" class="boton boton-secundario">
+          Cargar más productos
+        </button>
+      </section>
+    </main>
+
+    <aside class="lateral">
+      <section class="caja">
+        <h2>Categorías</h2>
+        <p class="nota">Lista obtenida de la API. Elige una para buscar.</p>
+        <ul id="lista-categorias" class="lista-categorias"></ul>
+      </section>
+      <section class="caja">
+        <h2>Sobre los datos</h2>
+        <p>Los productos, precios e imágenes son de prueba y pertenecen a
+            <a href="https://dummyjson.com/docs/products" target="_blank">DummyJSON</a>.</p>
+      </section>
+    </aside>
+
+  </div>
+
+  <footer class="pie">
+    <p>Vitrina Digital · Aplicaciones Web I · Universidad Nacional de Moquegua</p>
+    <p>Datos: <a href="https://dummyjson.com" target="_blank">dummyjson.com</a></p>
+  </footer>
+
+  <!-- Primero el archivo con las funciones compartidas, luego el de esta vista -->
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script> 
+</body>
+</html>

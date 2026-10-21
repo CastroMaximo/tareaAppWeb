@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrina Digital | Buscar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="contenedor encabezado-interno">
+      <a href="index.html" class="marca">Vitrina<span>Digital</span></a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="buscar.html" class="activo">Buscar</a>
+        <a href="crud.html">Mi inventario</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="contenedor diseno">
+
+    <main>
+      <section>
+        <h2>Buscar productos</h2>
+
+        <!-- Formulario con el texto y los filtros -->
+        <form id="form-busqueda" class="formulario">
+          <div class="campo campo-ancho">
+            <label for="texto-busqueda">Texto</label>
+            <input type="text" id="texto-busqueda" placeholder="Ej.: phone, perfume, chair">
+          </div>
+
+          <div class="campo">
+            <label for="filtro-categoria">Categoría</label>
+            <select id="filtro-categoria">
+              <option value="todas">Todas</option>
+              <!-- Las demás opciones las agrega JavaScript desde la API -->
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="precio-maximo">Precio máximo ($)</label>
+            <input type="number" id="precio-maximo" min="0" placeholder="Sin límite">
+          </div>
+
+          <div class="campo">
+            <label for="orden">Ordenar por</label>
+            <select id="orden">
+              <option value="ninguno">Sin orden</option>
+              <option value="precio-menor">Precio: menor a mayor</option>
+              <option value="precio-mayor">Precio: mayor a menor</option>
+              <option value="valoracion">Mejor valorados</option>
+            </select>
+          </div>
+
+          <div class="botones">
+            <button type="submit" class="boton">Buscar</button>
+            <button type="button" id="btn-limpiar" class="boton boton-secundario">
+              Limpiar
+            </button>
+          </div>
+        </form>
+
+        <p id="contador-resultados" class="contador"></p>
+        <p id="mensaje-estado" class="mensaje oculto"></p>
+        <div id="contenedor-resultados" class="cuadricula"></div>
+      </section>
+    </main>
+
+    <aside class="lateral">
+      <section class="caja">
+        <h2>¿Cómo filtra esta página?</h2>
+        <p class="nota">Hay dos tipos de filtro:</p>
+        <ul>
+          <li><strong>En el servidor:</strong> el texto o la categoría
+            se envían a la API en la URL.</li>
+          <li><strong>En el navegador:</strong> el precio máximo y el orden
+            se aplican con JavaScript a los productos que ya llegaron.</li>
+        </ul>
+      </section>
+    </aside>
+
+  </div>
+
+  <footer class="pie">
+    <p>Vitrina Digital · Aplicaciones Web I · Universidad Nacional de Moquegua</p>
+    <p>Datos: <a href="https://dummyjson.com" target="_blank">dummyjson.com</a></p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/buscar.js"></script>
+</body>
+</html>
